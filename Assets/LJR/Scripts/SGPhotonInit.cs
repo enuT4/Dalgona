@@ -67,7 +67,11 @@ namespace Enut4LJR
                 m_JoinRandRoomBtn.onClick.AddListener(JoinRandRoomFunc);
 
             if (m_CreateRoomBtn != null)
-                m_CreateRoomBtn.onClick.AddListener(()=>createRoomObj.SetActive(true));
+                m_CreateRoomBtn.onClick.AddListener(() =>
+                {
+                    SoundManager.instance.PlayerSound("Button", .3f);
+                    createRoomObj.SetActive(true);
+                });
 
             if (m_SearchRoomBtn != null)
                 m_SearchRoomBtn.onClick.AddListener(SearchRoomFunc);
@@ -82,7 +86,11 @@ namespace Enut4LJR
             myGoldTxt.text = GlobalData.myGold.ToString();
 
             if (messageOKBtn != null)
-                messageOKBtn.onClick.AddListener(() => messagePanel.SetActive(false));
+                messageOKBtn.onClick.AddListener(() =>
+                {
+                    SoundManager.instance.PlayerSound("Button", .3f);
+                    messagePanel.SetActive(false);
+                });
 
             //¹Ì±¸Çö
             m_SearchRoomBtn.interactable = false;
@@ -160,6 +168,7 @@ namespace Enut4LJR
 
         public void JoinRandRoomFunc()
         {
+            SoundManager.instance.PlayerSound("Button", .3f);
             if (GlobalData.myGold < 100)
 			{
                 messagePanel.SetActive(true);
@@ -195,8 +204,8 @@ namespace Enut4LJR
 
         void SearchRoomFunc()
 		{
-
-		}
+            SoundManager.instance.PlayerSound("Button", .3f);
+        }
 
         public void CreateRoomFunc(string roomName, int maxPlayer, int betGold)
 		{

@@ -52,10 +52,10 @@ namespace Enut4LJR
 		{
             m_SceneState = SGScene.SG_Ready;
 
-            pv = GetComponent<PhotonView>();
 
             PhotonNetwork.IsMessageQueueRunning = true;
 
+            pv = GetComponent<PhotonView>();
             GetConnectPlayerCount();
 
             InitReadyProps();
@@ -74,18 +74,20 @@ namespace Enut4LJR
             if (m_ReadyBtn != null)
                 m_ReadyBtn.onClick.AddListener(() =>
                 {
+                    SoundManager.instance.PlayerSound("Button", .3f);
                     SendReady(1);
                 });
 
             string msg = "\n<color=#00ff00>[" +
                 PhotonNetwork.LocalPlayer.NickName +
-                "] Connected</color>";
-            
-            //pv.RPC("LogMsg", RpcTarget.AllBuffered, msg);
+				"] Connected</color>";
+
+            pv.RPC("LogMsg", RpcTarget.AllBuffered, msg);
 
             if (m_GameStartBtn != null)
                 m_GameStartBtn.onClick.AddListener(() =>
                 {
+                    SoundManager.instance.PlayerSound("Button", .3f);
                     SendSGScene(SGScene.SG_Play);        //게임 씬으로 이동하도록
                 });
 
@@ -124,6 +126,7 @@ namespace Enut4LJR
                     m_MsgIF.gameObject.SetActive(false);
                     if (m_MsgIF.text != "")
 					{
+                        SoundManager.instance.PlayerSound("ValueControl");
                         EnterText();
 					}
 				}
@@ -147,7 +150,7 @@ namespace Enut4LJR
             string msg = "\n<color=#ffffff>[" +
                 PhotonNetwork.LocalPlayer.NickName +
                 "] " + m_MsgIF.text + "</color>";
-            //pv.RPC("LogMsg", RpcTarget.AllBuffered, msg);
+            pv.RPC("LogMsg", RpcTarget.AllBuffered, msg);
 
             m_MsgIF.text = "";
         }
@@ -173,11 +176,12 @@ namespace Enut4LJR
 
         public void OnClickExitRoom()
 		{
+            SoundManager.instance.PlayerSound("Button", .3f);
             string msg = "\n<color=#ff0000>[" + 
                 PhotonNetwork.LocalPlayer.NickName +
                 "] Disconnected</color>";
 
-            //pv.RPC("LogMsg", RpcTarget.AllBuffered, msg);
+            pv.RPC("LogMsg", RpcTarget.AllBuffered, msg);
 
             if (PhotonNetwork.PlayerList != null && PhotonNetwork.PlayerList.Length <= 1)
 			{
@@ -390,5 +394,7 @@ namespace Enut4LJR
 
             }
 		}
+
+        
     }
 }

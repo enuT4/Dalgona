@@ -758,6 +758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534679313}
   - component: {fileID: 534679312}
+  - component: {fileID: 534679314}
   m_Layer: 0
   m_Name: SGReadyMgr
   m_TagString: Untagged
@@ -780,6 +781,7 @@ MonoBehaviour:
   m_ExitBtn: {fileID: 1204666303}
   m_GameStartBtn: {fileID: 559621631}
   m_ReadyBtn: {fileID: 1869521063}
+  pv: {fileID: 0}
   m_MsgIF: {fileID: 1772786547}
   m_LogMsgTxt: {fileID: 1951558024}
   m_GKImg: {fileID: 267419965}
@@ -801,6 +803,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534679314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534679311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &559621629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2263,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
 --- !u!222 &1951558025
@@ -2261,6 +2285,7 @@ GameObject:
   - component: {fileID: 2098936398}
   - component: {fileID: 2098936400}
   - component: {fileID: 2098936399}
+  - component: {fileID: 2098936401}
   m_Layer: 5
   m_Name: PanelLogMsg
   m_TagString: Untagged
@@ -2326,3 +2351,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098936397}
   m_CullTransparentMesh: 1
+--- !u!114 &2098936401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098936397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1

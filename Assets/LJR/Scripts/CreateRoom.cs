@@ -85,14 +85,26 @@ namespace Enut4LJR
             //    goldUpBtn.onClick.AddListener(() => AdjGoldFunc(true));
             //if (goldDownBtn != null)
             //    goldDownBtn.onClick.AddListener(() => AdjGoldFunc(false));
-
+            
             if (maxPlayUpBtn != null)
-                maxPlayUpBtn.onClick.AddListener(() => AdjMaxFunc(true));
+                maxPlayUpBtn.onClick.AddListener(() =>
+                {
+                    SoundManager.instance.PlayerSound("ValueControl");
+                    AdjMaxFunc(true);
+                });
             if (maxPlayDownBtn != null)
-                maxPlayDownBtn.onClick.AddListener(() => AdjMaxFunc(false));
+                maxPlayDownBtn.onClick.AddListener(() =>
+                {
+                    SoundManager.instance.PlayerSound("ValueControl");
+                    AdjMaxFunc(false);
+                });
 
             if (closeBtn != null)
-                closeBtn.onClick.AddListener(() => gameObject.SetActive(false));
+                closeBtn.onClick.AddListener(() =>
+                {
+                    SoundManager.instance.PlayerSound("Button", .3f);
+                    gameObject.SetActive(false);
+                });
             if (createBtn != null)
                 createBtn.onClick.AddListener(CreateFunc);
 
@@ -112,7 +124,11 @@ namespace Enut4LJR
                 messBox.SetActive(false);
 
             if (messOKBtn != null)
-                messOKBtn.onClick.AddListener(() => messBox.SetActive(false));
+                messOKBtn.onClick.AddListener(() =>
+                {
+                    SoundManager.instance.PlayerSound("Button", .3f);
+                    messBox.SetActive(false);
+                });
         }
 
         // Update is called once per frame
@@ -192,8 +208,9 @@ namespace Enut4LJR
 
         void CreateFunc()
 		{
+            SoundManager.instance.PlayerSound("Button", .3f);
             //if (pwToggle.isOn)
-			//{
+            //{
             //    if (string.IsNullOrEmpty(pwIF.text))
             //    {
             //        messBox.SetActive(true);

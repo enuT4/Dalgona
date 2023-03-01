@@ -203,6 +203,7 @@ namespace Enut4LJR
 
         public void OnClickExitRoom()
         {
+            SoundManager.instance.PlayerSound("Button", .3f);
             string msg = "\n<color=#ff0000>[" +
                 PhotonNetwork.LocalPlayer.NickName +
                 "] Disconnected</color>";
