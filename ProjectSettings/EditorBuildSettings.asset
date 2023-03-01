@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/LJR/Scenes/SGInGameScene.unity
+    guid: fc14ba0a200222748ab8b12e41b5b84a
+  - enabled: 1
+    path: Assets/LJR/Scenes/SGLobbyScene.unity
+    guid: e0f74fb90f8e32b4dae5bc4771407641
+  - enabled: 1
+    path: Assets/LJR/Scenes/SGReadyScene.unity
+    guid: be8524efc5caac04c9bc92cbf73953ae
+  - enabled: 1
+    path: Assets/LJR/Scenes/SGResultScene.unity
+    guid: 9231e8c74555c7840853f410e87cce88
+  - enabled: 1
+    path: Assets/LJR/Scenes/SGTitleScene.unity
+    guid: 80d1df27fae7c514b944ca65ec207412
   m_configObjects: {}
