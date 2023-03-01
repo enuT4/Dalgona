@@ -147,9 +147,11 @@ namespace Enut4LJR
 
         void EnterText()
         {
-            string msg = "\n<color=#ffffff>[" +
+            string msg;
+            msg = "\n[" +
                 PhotonNetwork.LocalPlayer.NickName +
-                "] " + m_MsgIF.text + "</color>";
+                "] " + m_MsgIF.text;
+
             pv.RPC("LogMsg", RpcTarget.AllBuffered, msg);
 
             m_MsgIF.text = "";
@@ -205,7 +207,10 @@ namespace Enut4LJR
         [PunRPC]
         void LogMsg(string msg)
         {
-            m_LogMsgTxt.text += msg;
+            if (msg.Contains(GlobalData.nickName))
+                m_LogMsgTxt.text += msg;
+            else
+                m_LogMsgTxt.text += "<color=#ffffff>" + msg + "</color>";
         }
 
         bool IsDifferentList()
